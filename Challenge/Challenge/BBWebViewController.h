@@ -1,5 +1,5 @@
 //
-//  BBViewController.h
+//  BBWebViewController.h
 //  Challenge
 //
 //  Created by Brian Broom on 5/12/14.
@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BBViewController : UIViewController
+@interface BBWebViewController : UIViewController
+
+@property (strong, nonatomic) NSString *urlString;
 
 @end

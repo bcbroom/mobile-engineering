@@ -14,13 +14,18 @@
 		D38A61BC19214CE500B256CC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D38A61BB19214CE500B256CC /* main.m */; };
 		D38A61C019214CE500B256CC /* BBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D38A61BF19214CE500B256CC /* BBAppDelegate.m */; };
 		D38A61C319214CE500B256CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D38A61C119214CE500B256CC /* Main.storyboard */; };
-		D38A61C619214CE500B256CC /* BBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D38A61C519214CE500B256CC /* BBViewController.m */; };
 		D38A61C819214CE500B256CC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D38A61C719214CE500B256CC /* Images.xcassets */; };
 		D38A61CF19214CE500B256CC /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D38A61CE19214CE500B256CC /* XCTest.framework */; };
 		D38A61D019214CE500B256CC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D38A61AF19214CE500B256CC /* Foundation.framework */; };
 		D38A61D119214CE500B256CC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D38A61B319214CE500B256CC /* UIKit.framework */; };
 		D38A61D919214CE500B256CC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D38A61D719214CE500B256CC /* InfoPlist.strings */; };
 		D38A61DB19214CE500B256CC /* ChallengeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D38A61DA19214CE500B256CC /* ChallengeTests.m */; };
+		D38A61E519214E0600B256CC /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = D38A61E419214E0600B256CC /* data.json */; };
+		D38A61E719214E1F00B256CC /* image1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D38A61E619214E1F00B256CC /* image1.jpg */; };
+		D38A61E919214E2900B256CC /* image2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D38A61E819214E2900B256CC /* image2.jpg */; };
+		D38A61EC1921518800B256CC /* BBOfferTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D38A61EB1921518800B256CC /* BBOfferTableViewController.m */; };
+		D38A61EF192151A600B256CC /* BBOfferCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D38A61EE192151A600B256CC /* BBOfferCell.m */; };
+		D38A61F21921550800B256CC /* BBWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D38A61F11921550800B256CC /* BBWebViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,14 +50,21 @@
 		D38A61BE19214CE500B256CC /* BBAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BBAppDelegate.h; sourceTree = "<group>"; };
 		D38A61BF19214CE500B256CC /* BBAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBAppDelegate.m; sourceTree = "<group>"; };
 		D38A61C219214CE500B256CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		D38A61C419214CE500B256CC /* BBViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BBViewController.h; sourceTree = "<group>"; };
-		D38A61C519214CE500B256CC /* BBViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBViewController.m; sourceTree = "<group>"; };
 		D38A61C719214CE500B256CC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D38A61CD19214CE500B256CC /* ChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D38A61CE19214CE500B256CC /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		D38A61D619214CE500B256CC /* ChallengeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ChallengeTests-Info.plist"; sourceTree = "<group>"; };
 		D38A61D819214CE500B256CC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D38A61DA19214CE500B256CC /* ChallengeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChallengeTests.m; sourceTree = "<group>"; };
+		D38A61E419214E0600B256CC /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		D38A61E619214E1F00B256CC /* image1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image1.jpg; sourceTree = "<group>"; };
+		D38A61E819214E2900B256CC /* image2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image2.jpg; sourceTree = "<group>"; };
+		D38A61EA1921518800B256CC /* BBOfferTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBOfferTableViewController.h; path = ../BBOfferTableViewController.h; sourceTree = "<group>"; };
+		D38A61EB1921518800B256CC /* BBOfferTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBOfferTableViewController.m; path = ../BBOfferTableViewController.m; sourceTree = "<group>"; };
+		D38A61ED192151A600B256CC /* BBOfferCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBOfferCell.h; sourceTree = "<group>"; };
+		D38A61EE192151A600B256CC /* BBOfferCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBOfferCell.m; sourceTree = "<group>"; };
+		D38A61F01921550800B256CC /* BBWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBWebViewController.h; sourceTree = "<group>"; };
+		D38A61F11921550800B256CC /* BBWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBWebViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,9 +126,13 @@
 			children = (
 				D38A61BE19214CE500B256CC /* BBAppDelegate.h */,
 				D38A61BF19214CE500B256CC /* BBAppDelegate.m */,
+				D38A61EA1921518800B256CC /* BBOfferTableViewController.h */,
+				D38A61EB1921518800B256CC /* BBOfferTableViewController.m */,
+				D38A61ED192151A600B256CC /* BBOfferCell.h */,
+				D38A61EE192151A600B256CC /* BBOfferCell.m */,
+				D38A61F01921550800B256CC /* BBWebViewController.h */,
+				D38A61F11921550800B256CC /* BBWebViewController.m */,
 				D38A61C119214CE500B256CC /* Main.storyboard */,
-				D38A61C419214CE500B256CC /* BBViewController.h */,
-				D38A61C519214CE500B256CC /* BBViewController.m */,
 				D38A61C719214CE500B256CC /* Images.xcassets */,
 				D38A61B619214CE500B256CC /* Supporting Files */,
 			);
@@ -126,6 +142,9 @@
 		D38A61B619214CE500B256CC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D38A61E419214E0600B256CC /* data.json */,
+				D38A61E619214E1F00B256CC /* image1.jpg */,
+				D38A61E819214E2900B256CC /* image2.jpg */,
 				D38A61B719214CE500B256CC /* Challenge-Info.plist */,
 				D38A61B819214CE500B256CC /* InfoPlist.strings */,
 				D38A61BB19214CE500B256CC /* main.m */,
@@ -229,9 +248,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D38A61E719214E1F00B256CC /* image1.jpg in Resources */,
 				D38A61C819214CE500B256CC /* Images.xcassets in Resources */,
 				D38A61BA19214CE500B256CC /* InfoPlist.strings in Resources */,
+				D38A61E919214E2900B256CC /* image2.jpg in Resources */,
 				D38A61C319214CE500B256CC /* Main.storyboard in Resources */,
+				D38A61E519214E0600B256CC /* data.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,9 +272,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D38A61C619214CE500B256CC /* BBViewController.m in Sources */,
 				D38A61C019214CE500B256CC /* BBAppDelegate.m in Sources */,
+				D38A61EC1921518800B256CC /* BBOfferTableViewController.m in Sources */,
+				D38A61EF192151A600B256CC /* BBOfferCell.m in Sources */,
 				D38A61BC19214CE500B256CC /* main.m in Sources */,
+				D38A61F21921550800B256CC /* BBWebViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
