@@ -12,6 +12,6 @@
 
 
 
-- (instancetype)configureWithDictionary:(NSDictionary *)options;
+- (instancetype)configureWithDictionary:(NSDictionary *)options andSession:(NSURLSession *)session;
 
 @end

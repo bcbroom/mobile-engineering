@@ -20,7 +20,7 @@
 
 @implementation BBOfferCell
 
-- (instancetype)configureWithDictionary:(NSDictionary *)options {
+- (instancetype)configureWithDictionary:(NSDictionary *)options andSession:(NSURLSession *)session {
     
     self.descLabel.text = options[@"desc"];
     self.attribLabel.text = options[@"attrib"];
@@ -34,8 +34,6 @@
     
     NSURL *largeImageURL = [NSURL URLWithString:options[@"src"]];
     NSURL *userIconURL = [NSURL URLWithString:options[@"user"][@"avatar"][@"src"]];
-    
-    NSURLSession *session = [NSURLSession sharedSession];
     
     NSURLSessionDownloadTask *largeImageTask = [session downloadTaskWithURL:largeImageURL completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
         NSData *imageData = [NSData dataWithContentsOfURL:location];
@@ -59,6 +57,8 @@
     
     [largeImageTask resume];
     [userImageTask resume];
+    
+
     
     return self;
 }

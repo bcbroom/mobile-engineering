@@ -14,6 +14,7 @@
 
 @property (strong, nonatomic) NSMutableArray *offers;
 @property (strong, nonatomic) UIActivityIndicatorView *activityView;
+@property (strong, nonatomic) NSURLSession *session;
 
 @end
 
@@ -36,8 +37,8 @@
     [self.activityView startAnimating];
     
     NSURL *jsonUrl = [NSURL URLWithString:@"http://sheltered-bastion-2512.herokuapp.com/feed.json"];
-    NSURLSession *session = [NSURLSession sharedSession];
-    NSURLSessionDownloadTask *getJsonTask = [session downloadTaskWithURL:jsonUrl completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
+    self.session = [NSURLSession sessionWithConfiguration:nil];
+    NSURLSessionDownloadTask *getJsonTask = [self.session downloadTaskWithURL:jsonUrl completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
         
         NSData *jsonData = [NSData dataWithContentsOfURL:location];
         self.offers = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:&error];
@@ -62,6 +63,19 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    if (!self.session) {
+        self.session = [NSURLSession sessionWithConfiguration:nil];
+    }
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self.session finishTasksAndInvalidate];
+    self.session = nil;
+}
+
 
 
 #pragma mark - Table view data source
@@ -79,7 +93,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     BBOfferCell *cell = (BBOfferCell *)[tableView dequeueReusableCellWithIdentifier:@"Offer" forIndexPath:indexPath];
-    [cell configureWithDictionary:self.offers[indexPath.row]];
+    [cell configureWithDictionary:self.offers[indexPath.row] andSession:self.session];
     return cell;
 }
 
