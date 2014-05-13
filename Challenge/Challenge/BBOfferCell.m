@@ -13,6 +13,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *largeImageView;
 @property (weak, nonatomic) IBOutlet UILabel *descLabel;
 @property (weak, nonatomic) IBOutlet UILabel *attribLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *userImageView;
+@property (weak, nonatomic) IBOutlet UILabel *userLabel;
 
 @end
 
@@ -23,7 +25,8 @@
     self.largeImageView.image = [UIImage imageNamed:@"image1.jpg"];
     self.descLabel.text = options[@"desc"];
     self.attribLabel.text = options[@"attrib"];
-//    self.attribLabel.text = @"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo ";
+    self.userLabel.text = options[@"user"][@"name"];
+    self.userImageView.image = [UIImage imageNamed:@"userIcon.png"];
     
     return self;
 }

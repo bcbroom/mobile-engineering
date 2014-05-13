@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D352B0071921C5A700D600C4 /* userIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = D352B0061921C5A700D600C4 /* userIcon.png */; };
 		D38A61B019214CE500B256CC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D38A61AF19214CE500B256CC /* Foundation.framework */; };
 		D38A61B219214CE500B256CC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D38A61B119214CE500B256CC /* CoreGraphics.framework */; };
 		D38A61B419214CE500B256CC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D38A61B319214CE500B256CC /* UIKit.framework */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D352B0061921C5A700D600C4 /* userIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = userIcon.png; sourceTree = "<group>"; };
 		D38A61AC19214CE500B256CC /* Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Challenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D38A61AF19214CE500B256CC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D38A61B119214CE500B256CC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -145,6 +147,7 @@
 				D38A61E419214E0600B256CC /* data.json */,
 				D38A61E619214E1F00B256CC /* image1.jpg */,
 				D38A61E819214E2900B256CC /* image2.jpg */,
+				D352B0061921C5A700D600C4 /* userIcon.png */,
 				D38A61B719214CE500B256CC /* Challenge-Info.plist */,
 				D38A61B819214CE500B256CC /* InfoPlist.strings */,
 				D38A61BB19214CE500B256CC /* main.m */,
@@ -251,6 +254,7 @@
 				D38A61E719214E1F00B256CC /* image1.jpg in Resources */,
 				D38A61C819214CE500B256CC /* Images.xcassets in Resources */,
 				D38A61BA19214CE500B256CC /* InfoPlist.strings in Resources */,
+				D352B0071921C5A700D600C4 /* userIcon.png in Resources */,
 				D38A61E919214E2900B256CC /* image2.jpg in Resources */,
 				D38A61C319214CE500B256CC /* Main.storyboard in Resources */,
 				D38A61E519214E0600B256CC /* data.json in Resources */,
