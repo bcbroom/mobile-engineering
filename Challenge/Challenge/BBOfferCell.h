@@ -10,4 +10,8 @@
 
 @interface BBOfferCell : UITableViewCell
 
+
+
+- (instancetype)configureWithDictionary:(NSDictionary *)options;
+
 @end
