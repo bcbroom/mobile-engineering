@@ -30,6 +30,8 @@
     self.largeImageView.image = nil;
     self.userImageView.image = nil;
     
+    self.largeImageView.alpha = 0.2;
+    
     NSURL *largeImageURL = [NSURL URLWithString:options[@"src"]];
     NSURL *userIconURL = [NSURL URLWithString:options[@"user"][@"avatar"][@"src"]];
     
@@ -40,6 +42,10 @@
         UIImage *image = [UIImage imageWithData:imageData];
         dispatch_async(dispatch_get_main_queue(), ^{
             self.largeImageView.image = image;
+            [UIView animateWithDuration:0.25 animations:^{
+                self.largeImageView.alpha = 1.0;
+            }];
+            
         });
     }];
     
