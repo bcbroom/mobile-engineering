@@ -13,6 +13,7 @@
 @interface BBOfferTableViewController ()
 
 @property (strong, nonatomic) NSMutableArray *offers;
+@property (strong, nonatomic) UIActivityIndicatorView *activityView;
 
 @end
 
@@ -28,9 +29,28 @@
 }
 
 - (void)awakeFromNib {
-    NSError *error = nil;
-    NSData *jsonData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"data" ofType:@"json"]];
-    self.offers = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:&error];
+    
+    [self.activityView startAnimating];
+    
+    self.activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    self.activityView.center = CGPointMake(CGRectGetMidX(self.view.bounds), CGRectGetMidY(self.view.bounds) - 150);
+    self.activityView.color = [UIColor colorWithRed:0.4 green:0.4 blue:0.6 alpha:1.0];
+    [self.view addSubview:self.activityView];
+    [self.activityView startAnimating];
+    
+    NSURL *jsonUrl = [NSURL URLWithString:@"http://sheltered-bastion-2512.herokuapp.com/feed.json"];
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSessionTask *getJsonTask = [session downloadTaskWithURL:jsonUrl completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
+        NSData *jsonData = [NSData dataWithContentsOfURL:location];
+        _offers = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:&error];
+        [self.tableView reloadData];
+        [self.activityView stopAnimating];
+    }];
+    
+    [getJsonTask resume];
+    
+    //NSData *jsonData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"data" ofType:@"json"]];
+    //self.offers = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:&error];
 }
 
 - (void)viewDidLoad
