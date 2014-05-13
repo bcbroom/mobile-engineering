@@ -23,7 +23,7 @@
     self.largeImageView.image = [UIImage imageNamed:@"image1.jpg"];
     self.descLabel.text = options[@"desc"];
     self.attribLabel.text = options[@"attrib"];
-    self.attribLabel.text = @"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo ";
+//    self.attribLabel.text = @"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo ";
     
     return self;
 }
