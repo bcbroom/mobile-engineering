@@ -21,12 +21,38 @@
 @implementation BBOfferCell
 
 - (instancetype)configureWithDictionary:(NSDictionary *)options {
-
-    self.largeImageView.image = [UIImage imageNamed:@"image1.jpg"];
+    
     self.descLabel.text = options[@"desc"];
     self.attribLabel.text = options[@"attrib"];
     self.userLabel.text = options[@"user"][@"name"];
-    self.userImageView.image = [UIImage imageNamed:@"userIcon.png"];
+    
+    // nil out image, since the cell may be reused and have an image already loaded
+    self.largeImageView.image = nil;
+    self.userImageView.image = nil;
+    
+    NSURL *largeImageURL = [NSURL URLWithString:options[@"src"]];
+    NSURL *userIconURL = [NSURL URLWithString:options[@"user"][@"avatar"][@"src"]];
+    
+    NSURLSession *session = [NSURLSession sharedSession];
+    
+    NSURLSessionDownloadTask *largeImageTask = [session downloadTaskWithURL:largeImageURL completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
+        NSData *imageData = [NSData dataWithContentsOfURL:location];
+        UIImage *image = [UIImage imageWithData:imageData];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.largeImageView.image = image;
+        });
+    }];
+    
+    NSURLSessionDownloadTask *userImageTask = [session downloadTaskWithURL:userIconURL completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
+        NSData *imageData = [NSData dataWithContentsOfURL:location];
+        UIImage *image = [UIImage imageWithData:imageData];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.userImageView.image = image;
+        });
+    }];
+    
+    [largeImageTask resume];
+    [userImageTask resume];
     
     return self;
 }

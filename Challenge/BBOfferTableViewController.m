@@ -28,10 +28,7 @@
     return self;
 }
 
-- (void)awakeFromNib {
-    
-    [self.activityView startAnimating];
-    
+- (void)awakeFromNib {    
     self.activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
     self.activityView.center = CGPointMake(CGRectGetMidX(self.view.bounds), CGRectGetMidY(self.view.bounds) - 150);
     self.activityView.color = [UIColor colorWithRed:0.4 green:0.4 blue:0.6 alpha:1.0];
@@ -40,17 +37,18 @@
     
     NSURL *jsonUrl = [NSURL URLWithString:@"http://sheltered-bastion-2512.herokuapp.com/feed.json"];
     NSURLSession *session = [NSURLSession sharedSession];
-    NSURLSessionTask *getJsonTask = [session downloadTaskWithURL:jsonUrl completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
+    NSURLSessionDownloadTask *getJsonTask = [session downloadTaskWithURL:jsonUrl completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
+        
         NSData *jsonData = [NSData dataWithContentsOfURL:location];
-        _offers = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:&error];
-        [self.tableView reloadData];
-        [self.activityView stopAnimating];
+        self.offers = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:&error];
+
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.activityView stopAnimating];
+            [self.tableView reloadData];
+        });
     }];
     
     [getJsonTask resume];
-    
-    //NSData *jsonData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"data" ofType:@"json"]];
-    //self.offers = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:&error];
 }
 
 - (void)viewDidLoad
